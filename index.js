@@ -50,7 +50,7 @@ async function run() {
         const destinations = database.collection('destination')
         const bookingDatas = database.collection('bookingData')
 
-        app.get('/destination',verifyToken, async (req, res) => {
+        app.get('/destination', async (req, res) => {
             const cursor = destinations.find()
             const result = await cursor.toArray()
             res.send(result)
